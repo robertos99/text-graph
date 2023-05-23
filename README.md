@@ -16,7 +16,7 @@
 
 #### 2. Install backend dependencies
    - navigate to application-backend folder
-   - run: pip install requirements.txt
+   - run: pip install -r requirements.txt
 
 
 #### 3. Install frontend dependencies

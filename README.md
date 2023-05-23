@@ -8,20 +8,20 @@
 
 
 ### Steps
-#### 1. Start database:
-   - navigate to database folder (right no its within the backend app idk why i did this)
-   - navigate to where docker-compose.yml is
-   - run: docker compose up
-
-
-#### 2. Install backend dependencies
+#### 1. Install backend dependencies
    - navigate to application-backend folder
    - run: pip install -r requirements.txt
 
 
-#### 3. Install frontend dependencies
+#### 2. Install frontend dependencies
    - navigate to application-frontend folder
    - run: npm install
+
+
+#### 3. Start database:
+- navigate to database folder 
+- navigate to where docker-compose.yml is
+- run: docker compose up
 
 
 #### 4. Migrate database:

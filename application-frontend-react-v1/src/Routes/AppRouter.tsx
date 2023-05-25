@@ -6,6 +6,7 @@ import GraphsRoute from "./GraphsRoute";
 import GraphContainer from "../components/Graph/GraphContainer";
 import ContentRouteWrapper from "./ContentRouteWrapper";
 import {Card} from "@mui/material";
+import GraphDocumentRoute from "./Graph-Document";
 
 
 
@@ -20,14 +21,7 @@ function AppRouter() {
                     <Route path="upload" element={<UploadRoute/>} />
                     <Route path="graphs" element={<GraphsRoute/>} />
                     <Route path="graphs/document/:index" element={
-                        <ContentRouteWrapper>
-                            <Card sx={{mt: 3, height: '500px', width: '1000px', padding: 2}}>
-                                <div style={{height: '100%', width: '100%'}}>
-                                    <GraphContainer/>
-                                </div>
-                            </Card>
-
-                        </ContentRouteWrapper>
+                        <GraphDocumentRoute/>
                     }/>
                     {
                         //<Route path="/item/:index" component={ItemDetails} />

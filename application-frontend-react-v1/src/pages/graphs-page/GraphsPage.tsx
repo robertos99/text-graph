@@ -1,10 +1,10 @@
 import  { useEffect, useState } from 'react';
-import GraphContainer from '../components/Graph/GraphContainer';
-import DocumentSelectorGrid from '../components/DocumentSelectorGrid/DocumentSelectorGrid';
-import ItemCardLink from '../components/DocumentSelectorGrid/ItemCardLink';
-import ContentRouteWrapper from '../Routes/ContentRouteWrapper';
-import {ROUTE_VARIABLES, ROUTES} from "../Routes/RouteConfig";
-import Document from '../models/Document'
+import GraphContainer from '../../components/Graph/GraphContainer';
+import DocumentSelectorGrid from './DocumentSelectorGrid/DocumentSelectorGrid';
+import DocumentCardLink from './DocumentSelectorGrid/DocumentCardLink';
+import ContentRouteWrapper from '../../routes/ContentRouteWrapper';
+import {ROUTE_VARIABLES, ROUTES} from "../../routes/RouteConfig";
+import Document from '../../models/Document'
 
 
 
@@ -22,10 +22,10 @@ export default function GraphsPage() {
             <div style={{ width: '90%', marginTop: '3%', marginBottom: '0%', paddingLeft: '5%' }}>
                 <DocumentSelectorGrid>
                     {documents.map((document) => (
-                        <ItemCardLink key={document.id} to={`${ROUTES.GRAPH_DOCUMENT.replace(`:${ROUTE_VARIABLES.DOCUMENT_ID}`, document.id.toString())}`}>
+                        <DocumentCardLink key={document.id} to={`${ROUTES.GRAPH_DOCUMENT.replace(`:${ROUTE_VARIABLES.DOCUMENT_ID}`, document.id.toString())}`}>
                             {document.title}
                             <GraphContainer />
-                        </ItemCardLink>
+                        </DocumentCardLink>
                     ))}
                 </DocumentSelectorGrid>
             </div>

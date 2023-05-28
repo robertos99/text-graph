@@ -1,7 +1,7 @@
 import * as React from 'react'
-import MultiStepper from "../components/MultiStepper/MultiStepper";
+import MultiStepper from "./MultiStepper/MultiStepper";
 import {Card} from "@mui/material";
-import ContentRouteWrapper from "../Routes/ContentRouteWrapper";
+import ContentRouteWrapper from "../../routes/ContentRouteWrapper";
 
 
 export default function UploadPage() {

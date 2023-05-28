@@ -1,12 +1,12 @@
 import * as React from 'react'
-import UploadPage from "../pages/UploadPage";
+import UploadPage from "../pages/upload-page/UploadPage";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from "./Layout";
-import GraphsPage from "../pages/GraphsPage";
+import GraphsPage from "../pages/graphs-page/GraphsPage";
 import GraphContainer from "../components/Graph/GraphContainer";
 import ContentRouteWrapper from "./ContentRouteWrapper";
 import {Card} from "@mui/material";
-import GraphAnalyzerPage from "../pages/GraphAnalyzerPage";
+import GraphAnalyzerPage from "../pages/graph-analyzer-page/GraphAnalyzerPage";
 import {ROUTES, ROUTE_VARIABLES} from "./RouteConfig"
 
 function AppRouter() {

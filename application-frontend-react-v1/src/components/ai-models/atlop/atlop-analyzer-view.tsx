@@ -2,7 +2,7 @@ import TextAnalyzer from "./text-selector";
 import GraphContainer from "../../Graph/GraphContainer";
 import * as React from "react";
 import {useParams} from "react-router-dom";
-import {ROUTE_VARIABLES} from "../../../Routes/RouteConfig"
+import {ROUTE_VARIABLES} from "../../../routes/RouteConfig"
 
 export default function AtlopAnalyzerView({}) {
     const id= useParams()[ROUTE_VARIABLES.DOCUMENT_ID];

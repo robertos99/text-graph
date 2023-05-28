@@ -1,10 +1,10 @@
-import ContentRouteWrapper from "../Routes/ContentRouteWrapper";
+import ContentRouteWrapper from "../../routes/ContentRouteWrapper";
 import {Card} from "@mui/material";
-import GraphContainer from "../components/Graph/GraphContainer";
+import GraphContainer from "../../components/Graph/GraphContainer";
 import * as React from "react";
 import { Routes, Route, useParams } from 'react-router-dom';
-import TextAnalyzer from "../components/ai-models/atlop/text-selector";
-import AtlopAnalyzerView from "../components/ai-models/atlop/atlop-analyzer-view";
+import TextAnalyzer from "../../components/ai-models/atlop/text-selector";
+import AtlopAnalyzerView from "../../components/ai-models/atlop/atlop-analyzer-view";
 
 
 export default function GraphAnalyzerPage() {

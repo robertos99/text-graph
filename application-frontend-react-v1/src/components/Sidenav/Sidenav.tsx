@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Drawer, Tabs} from '@mui/material';
 import CustomTabLink from "./Util/CustomTabLink";
-import {ROUTES} from "../../Routes/RouteConfig";
+import {ROUTES} from "../../routes/RouteConfig";
 
 
 const SideNavigation = ({ selectedTab, handleTabChange }) => {

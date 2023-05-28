@@ -14,7 +14,7 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
 }));
 
-export default function ItemCardLink({ to, children }) {
+export default function DocumentCardLink({ to, children }) {
     return (
         <Link sx={{cursor: 'pointer'}} to={to}>
             <Item>

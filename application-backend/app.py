@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_migrate import Migrate
 from flask_cors import CORS
-from database.db import db
+from database.db import create_session
 from domain.document.routes import document_blueprint
 
 
@@ -15,8 +15,8 @@ def create_app(config=None):
         app.config.from_object(config)
 
     CORS(app)
-    db.init_app(app)
-    Migrate(app, db)
+    db_session = create_session(app)
+    Migrate(app, db_session)
 
     app.register_blueprint(document_blueprint)
 

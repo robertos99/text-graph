@@ -1,6 +1,7 @@
 from flask import  Blueprint, jsonify, request
 from .model import Document
-from database import db
+from database.db import db
+
 
 document_blueprint = Blueprint('document', __name__)
 

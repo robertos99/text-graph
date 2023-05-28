@@ -20,7 +20,7 @@ function AppRouter() {
                 <Route path="/" element={<Layout />}>
                     <Route path="upload" element={<UploadRoute/>} />
                     <Route path="graphs" element={<GraphsRoute/>} />
-                    <Route path="graphs/document/:index" element={
+                    <Route path="graphs/document/:id" element={
                         <GraphDocumentRoute/>
                     }/>
                     {

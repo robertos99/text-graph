@@ -6,8 +6,8 @@ import { Routes, Route, useParams } from 'react-router-dom';
 
 
 export default function GraphDocumentRoute() {
-    let { index } = useParams();
-    console.log(index)
+    const { id } = useParams();
+    console.log(id)
 
 
     return (

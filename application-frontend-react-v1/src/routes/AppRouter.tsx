@@ -10,6 +10,7 @@ import GraphAnalyzerPage from "../pages/graph-analyzer-page/GraphAnalyzerPage";
 import {ROUTES, ROUTE_VARIABLES} from "./RouteConfig"
 
 function AppRouter() {
+    console.log('redner app router')
     return (
         <Router>
             <Routes>

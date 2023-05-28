@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import { Typography, TextareaAutosize, Button } from '@mui/material';
+import {useState} from "react";
 
 interface TextAnalyzerProps {
     title: string;
@@ -32,7 +32,7 @@ const TextAnalyzer: React.FC<TextAnalyzerProps> = ({ title, text }) => {
                 readOnly
                 onClick={handleTextSelection}
                 aria-label="Text"
-                rowsMin={5}
+                rowsmin={5}
                 style={{ width: '100%', minHeight: '200px', resize: 'vertical', padding: '8px', marginBottom: '16px' }}
             />
             <Button

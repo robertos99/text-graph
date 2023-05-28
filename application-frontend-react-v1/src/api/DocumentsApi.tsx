@@ -32,4 +32,12 @@ export default class DocumentsApi {
                 throw error;
             });
     }
+
+    static async getDocument(documentId: number): Promise<Document> {
+        const response = await fetch(`http://localhost:5000/documents/${documentId}`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch document');
+        }
+        return response.json();
+    }
 }

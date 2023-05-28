@@ -2,15 +2,21 @@ import * as React from 'react';
 import {Drawer, Tabs} from '@mui/material';
 import CustomTabLink from "./Util/CustomTabLink";
 import {ROUTES} from "../../routes/RouteConfig";
+import {useState} from "react";
 
 
-const SideNavigation = ({ selectedTab, handleTabChange }) => {
+const SideNavigation = () => {
+    const [selectedTab, setSelectedTab] = useState<number>(0);
+    const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
+        setSelectedTab(newValue);
+    };
+    console.log(selectedTab)
     return (
         <Drawer variant="permanent" anchor="left">
-            <Tabs value={selectedTab} orientation="vertical" onChange={handleTabChange}>
+           <div style={{display: 'flex', flexDirection: 'column'}}>
                 <CustomTabLink to={ROUTES.UPLOAD} label={'Upload'}/>
                 <CustomTabLink to={ROUTES.GRAPHS} label={'Graphs'}/>
-            </Tabs>
+           </div>
         </Drawer>
     );
 };

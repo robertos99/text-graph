@@ -1,17 +1,18 @@
 import TextAnalyzer from "./text-selector";
 import GraphContainer from "../../Graph/GraphContainer";
 import * as React from "react";
-import {useParams} from "react-router-dom";
-import {ROUTE_VARIABLES} from "../../../routes/RouteConfig"
+import Document from "../../../models/Document";
 
-export default function AtlopAnalyzerView({}) {
-    const id= useParams()[ROUTE_VARIABLES.DOCUMENT_ID];
-    console.log(id)
+interface AnalyzerViewProps {
+    document: Document,
+}
 
+export default function AtlopAnalyzerView({document}: AnalyzerViewProps) {
+    console.log(document)
     return (
         <div style={{display: 'flex'}}>
             <div style={{width: '40%'}}>
-                <TextAnalyzer title={"title"} text={"content"} />
+                <TextAnalyzer title={document.title} text={document.text} />
             </div>
             <div style={{height: '480px', width: '100%'}}>
                 <GraphContainer/>

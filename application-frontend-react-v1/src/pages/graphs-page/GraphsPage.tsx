@@ -23,8 +23,8 @@ export default function GraphsPage() {
                 <DocumentSelectorGrid>
                     {documents.map((document) => (
                         <DocumentCardLink key={document.id} to={`${ROUTES.GRAPH_DOCUMENT.replace(`:${ROUTE_VARIABLES.DOCUMENT_ID}`, document.id.toString())}`}>
-                            {document.title}
-                            <GraphContainer />
+                            <h3 style={{textDecoration: 'underline'}}>{document.title}</h3>
+                            <div style={{fontSize: '11px', paddingLeft: 12, paddingRight:12}}>{document.text}</div>
                         </DocumentCardLink>
                     ))}
                 </DocumentSelectorGrid>

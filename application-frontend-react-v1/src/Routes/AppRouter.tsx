@@ -7,9 +7,7 @@ import GraphContainer from "../components/Graph/GraphContainer";
 import ContentRouteWrapper from "./ContentRouteWrapper";
 import {Card} from "@mui/material";
 import GraphDocumentRoute from "./Graph-Document";
-
-
-
+import {ROUTES, ROUTE_VARIABLES} from "./RouteConfig"
 
 function AppRouter() {
     return (
@@ -17,10 +15,10 @@ function AppRouter() {
             <Routes>
                 {/* Layout as parent route is for sharing common style for all routes (sidenav).
                     Layout has an <Outlet> for all subroutes content.*/}
-                <Route path="/" element={<Layout />}>
-                    <Route path="upload" element={<UploadRoute/>} />
-                    <Route path="graphs" element={<GraphsRoute/>} />
-                    <Route path="graphs/document/:id" element={
+                <Route path={ROUTES.HOME} element={<Layout />}>
+                    <Route path={ROUTES.UPLOAD} element={<UploadRoute/>} />
+                    <Route path={ROUTES.GRAPHS} element={<GraphsRoute/>} />
+                    <Route path={ROUTES.GRAPH_DOCUMENT} element={
                         <GraphDocumentRoute/>
                     }/>
                     {

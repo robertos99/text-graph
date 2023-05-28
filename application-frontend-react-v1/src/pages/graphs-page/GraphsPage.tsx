@@ -5,6 +5,7 @@ import DocumentCardLink from './DocumentSelectorGrid/DocumentCardLink';
 import ContentRouteWrapper from '../../routes/ContentRouteWrapper';
 import {ROUTE_VARIABLES, ROUTES} from "../../routes/RouteConfig";
 import Document from '../../models/Document'
+import DocumentsApi from "../../api/DocumentsApi";
 
 
 
@@ -12,8 +13,7 @@ export default function GraphsPage() {
     const [documents, setDocuments] = useState<Document[]>([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/documents')
-            .then((response) => response.json())
+        DocumentsApi.fetchDocuments()
             .then((data: Document[]) => setDocuments(data))
             .catch((error) => console.error('Error fetching documents:', error));
     }, []);

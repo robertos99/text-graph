@@ -7,9 +7,10 @@ import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Card, TextField, Checkbox, Select, MenuItem } from "@mui/material";
+import DocumentsApi from "../../../api/DocumentsApi";
 
 
-type FormData = {
+export type FormData = {
     documentBody: string;
     documentTitle: string;
 };
@@ -37,22 +38,12 @@ export default function MultiStepper() {
 
     const handleSave = () => {
         handleSubmit((data) => {
-            // POST request on the last step
-            fetch('http://localhost:5000/documents', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    title: data.documentTitle,
-                    text: data.documentBody
+            DocumentsApi.createDocument(data)
+                .then((response) => {
+                    console.log(response);
+                    setActiveStep((prevActiveStep) => prevActiveStep + 1);
                 })
-            })
-                .then(response => response.json())
-                .then(data => console.log(data))
-                .catch((error) => console.error('Error:', error));
-
-            setActiveStep((prevActiveStep) => prevActiveStep + 1);
+                .catch((error) => console.error('Error creating document:', error));
         })();
     };
 

@@ -1,16 +1,16 @@
 import * as React from 'react'
 import MultiStepper from "../components/MultiStepper/MultiStepper";
 import {Card} from "@mui/material";
-import ContentRouteWrapper from "./ContentRouteWrapper";
+import ContentRouteWrapper from "../Routes/ContentRouteWrapper";
 
 
-export default function UploadRoute() {
+export default function UploadPage() {
     return (
-        <ContentRouteWrapper>
                     <div style={{width: '100%', marginTop: '7%'}}>
-                        <Card><MultiStepper/></Card>
+                        <Card>
+                            <MultiStepper/>
+                        </Card>
                     </div>
-        </ContentRouteWrapper>
     )
 }
 

@@ -2,17 +2,13 @@ import  { useEffect, useState } from 'react';
 import GraphContainer from '../components/Graph/GraphContainer';
 import DocumentSelectorGrid from '../components/DocumentSelectorGrid/DocumentSelectorGrid';
 import ItemCardLink from '../components/DocumentSelectorGrid/ItemCardLink';
-import ContentRouteWrapper from './ContentRouteWrapper';
-import {ROUTE_VARIABLES, ROUTES} from "./RouteConfig";
-
-interface Document {
-    id: number;
-    title: string;
-    text: string;
-}
+import ContentRouteWrapper from '../Routes/ContentRouteWrapper';
+import {ROUTE_VARIABLES, ROUTES} from "../Routes/RouteConfig";
+import Document from '../models/Document'
 
 
-export default function GraphsRoute() {
+
+export default function GraphsPage() {
     const [documents, setDocuments] = useState<Document[]>([]);
 
     useEffect(() => {
@@ -23,7 +19,6 @@ export default function GraphsRoute() {
     }, []);
 
     return (
-        <ContentRouteWrapper>
             <div style={{ width: '90%', marginTop: '3%', marginBottom: '0%', paddingLeft: '5%' }}>
                 <DocumentSelectorGrid>
                     {documents.map((document) => (
@@ -34,6 +29,5 @@ export default function GraphsRoute() {
                     ))}
                 </DocumentSelectorGrid>
             </div>
-        </ContentRouteWrapper>
     );
 }

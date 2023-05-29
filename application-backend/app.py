@@ -3,6 +3,7 @@ from flask_migrate import Migrate
 from flask_cors import CORS
 from database.db import create_session
 from domain.document.routes import document_blueprint
+from domain.ai_models.atlop.routes import atlop_blueprint
 
 
 def create_app(config=None):
@@ -19,6 +20,7 @@ def create_app(config=None):
     Migrate(app, db_session)
 
     app.register_blueprint(document_blueprint)
+    app.register_blueprint(atlop_blueprint)
 
     return app
 

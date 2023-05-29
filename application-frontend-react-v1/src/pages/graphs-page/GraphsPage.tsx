@@ -1,5 +1,5 @@
 import  { useEffect, useState } from 'react';
-import GraphContainer from '../../components/Graph/GraphContainer';
+import GraphContainer from '../../components/graph/GraphContainer';
 import DocumentSelectorGrid from './DocumentSelectorGrid/DocumentSelectorGrid';
 import DocumentCardLink from './DocumentSelectorGrid/DocumentCardLink';
 import ContentRouteWrapper from '../../routes/ContentRouteWrapper';

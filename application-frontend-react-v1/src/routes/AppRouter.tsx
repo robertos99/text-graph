@@ -3,7 +3,7 @@ import UploadPage from "../pages/upload-page/UploadPage";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from "./Layout";
 import GraphsPage from "../pages/graphs-page/GraphsPage";
-import GraphContainer from "../components/Graph/GraphContainer";
+import GraphContainer from "../components/graph/GraphContainer";
 import ContentRouteWrapper from "./ContentRouteWrapper";
 import {Card} from "@mui/material";
 import GraphAnalyzerPage from "../pages/graph-analyzer-page/GraphAnalyzerPage";

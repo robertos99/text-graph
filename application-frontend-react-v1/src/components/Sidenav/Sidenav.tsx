@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Drawer, Tabs} from '@mui/material';
-import CustomTabLink from "./Util/CustomTabLink";
+import CustomTabLink from "./util/CustomTabLink";
 import {ROUTES} from "../../routes/RouteConfig";
 import {useState} from "react";
 

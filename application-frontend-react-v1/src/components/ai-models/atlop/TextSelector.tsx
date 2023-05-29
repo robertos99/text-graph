@@ -1,12 +1,13 @@
 import { Typography, TextareaAutosize, Button } from '@mui/material';
 import {useState} from "react";
 
-interface TextAnalyzerProps {
+interface TextSelectorProps {
     title: string;
     text: string;
+    onAnalyzeSelectedText: (text: string) => void
 }
 
-const TextAnalyzer: React.FC<TextAnalyzerProps> = ({ title, text }) => {
+const TextSelector: React.FC<TextSelectorProps> = ({ title, text , onAnalyzeSelectedText}) => {
     const [selectedText, setSelectedText] = useState('');
 
     const handleTextSelection = () => {
@@ -15,10 +16,7 @@ const TextAnalyzer: React.FC<TextAnalyzerProps> = ({ title, text }) => {
     };
 
     const analyzeSelectedText = () => {
-        // Send the selectedText to the backend for analysis
-        // You can make an API request here to your Flask backend
-
-        // Reset the selected text after analysis
+        onAnalyzeSelectedText(selectedText)
         setSelectedText('');
     };
 
@@ -52,14 +50,8 @@ const TextAnalyzer: React.FC<TextAnalyzerProps> = ({ title, text }) => {
                     <Typography variant="body1">{selectedText}</Typography>
                 </div>
             )}
-            <div>
-                <Typography variant="h6" gutterBottom>
-                    Full Text:
-                </Typography>
-                <Typography variant="body1">{text}</Typography>
-            </div>
         </div>
     );
 };
 
-export default TextAnalyzer;
+export default TextSelector;

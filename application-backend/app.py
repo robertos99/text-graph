@@ -4,6 +4,7 @@ from flask_cors import CORS
 from database.db import create_session
 from domain.document.routes import document_blueprint
 from domain.ai_models.atlop.routes import atlop_blueprint
+from domain.ai_models.chatgpt_ie.routes import chatpgt_ie_blueprint
 
 
 def create_app(config=None):
@@ -21,6 +22,7 @@ def create_app(config=None):
 
     app.register_blueprint(document_blueprint)
     app.register_blueprint(atlop_blueprint)
+    app.register_blueprint(chatpgt_ie_blueprint)
 
     return app
 

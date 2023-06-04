@@ -1,3 +1,5 @@
+import os
+
 class Config:
     DB_HOST = 'localhost'
     DB_PORT = '5555'

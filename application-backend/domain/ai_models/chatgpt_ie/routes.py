@@ -9,8 +9,7 @@ class TextData:
 
 @chatpgt_ie_blueprint.before_app_request
 def initialize_class():
-    # Initialize your class here
-    # For example:
+    # init global instance
     global chatgpt_ie_instance
     chatgpt_ie_instance = ChatGPTInference()
 

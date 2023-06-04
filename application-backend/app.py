@@ -5,9 +5,11 @@ from database.db import create_session
 from domain.document.routes import document_blueprint
 from domain.ai_models.atlop.routes import atlop_blueprint
 from domain.ai_models.chatgpt_ie.routes import chatpgt_ie_blueprint
-
+from dotenv import load_dotenv
+import os
 
 def create_app(config=None):
+    load_dotenv()
     app = Flask(__name__)
     if config is None:
         # Use a default config when no argument is provided

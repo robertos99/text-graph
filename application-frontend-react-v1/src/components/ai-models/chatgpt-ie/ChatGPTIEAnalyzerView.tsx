@@ -1,33 +1,38 @@
 import GraphContainer from "../../graph/GraphContainer";
 import Document from "../../../models/Document";
-import './ans.css'
 import ChatGPTIEAnalyzerAPI from "../../../api/ChatGPTIEAnalyzerAPI.tsx";
 import {useEffect, useState} from "react";
+import TextSelector from "../../text-selector/TextSelector";
+import AtlopAnalyzerApi from "../../../api/AtlopAnalyzerApi";
+import './ans.css'
 
 interface AnalyzerViewProps {
     document: Document,
 }
 
 export default function ChatGPTIEAnalyzerView({document}: AnalyzerViewProps) {
-    console.log(document)
-    const [analyzedDoc, setAnalyzedDoc] = useState(null)
+    const [analyzedDoc, setAnalyzedDoc] = useState<Graph | null>(null)
 
-    useEffect(()=> {
-         const fetchData = async () => {
-                const result = await ChatGPTIEAnalyzerAPI.analyzeText(document.text)
-                setAnalyzedDoc(result)
-         }
+    const analyzeSelectedTextHandler = (text: string) => {
+        const fetchData = async () => {
+            const result = await ChatGPTIEAnalyzerAPI.analyzeText(document.text)
+            setAnalyzedDoc(result)
+        }
 
-            // call the function
-            fetchData()
-            // make sure to catch any error
-            .catch(console.error);
-    },[])
+        // call the function
+        fetchData()
+    }
 
     return (
+
         <div style={{display: 'flex'}}>
+            <div style={{width: '40%', height: '480px'}} className={"overflowY"}>
+                <TextSelector title={document.title}
+                              text={document.text}
+                              onAnalyzeSelectedText={analyzeSelectedTextHandler}/>
+            </div>
             <div style={{height: '480px', width: '100%'}}>
-                {analyzedDoc && <GraphContainer/>}
+                {analyzedDoc && <GraphContainer nodes={analyzedDoc.nodes} edges={analyzedDoc.edges}/>}
             </div>
         </div>
     )

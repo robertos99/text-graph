@@ -1,4 +1,4 @@
-export default interface Document {
+interface Document {
     id: number;
     title: string;
     text: string;

@@ -1,4 +1,4 @@
-import TextSelector from "./TextSelector";
+import TextSelector from "../../text-selector/TextSelector";
 import GraphContainer from "../../graph/GraphContainer";
 import Document from "../../../models/Document";
 import './ans.css'

@@ -1,17 +1,15 @@
 import ContentRouteWrapper from "../../routes/ContentRouteWrapper";
 import {Card} from "@mui/material";
-import GraphContainer from "../../components/graph/GraphContainer";
 import * as React from "react";
-import { Routes, Route, useParams } from 'react-router-dom';
-import AtlopAnalyzerView from "../../components/ai-models/atlop/AtlopAnalyzerView";
+import { useParams } from 'react-router-dom';
 import {ROUTE_VARIABLES} from "../../routes/RouteConfig";
 import {useEffect, useState} from "react";
 import DocumentsApi from "../../api/DocumentsApi";
+import ChatGPTIEAnalyzerView from "../../components/ai-models/chatgpt-ie/ChatGPTIEAnalyzerView";
 
 
 export default function GraphAnalyzerPage() {
     const id = useParams<number>()[ROUTE_VARIABLES.DOCUMENT_ID];
-    console.log('render')
     const [document, setDocument] = useState<Document | null>(null);
 
     useEffect(() => {
@@ -31,7 +29,8 @@ export default function GraphAnalyzerPage() {
 
             <Card sx={{mt: 3, height: '500px', width: '1000px', padding: 2}}>
                 {
-                    document && <AtlopAnalyzerView document={document}/>
+                    //document && <AtlopAnalyzerView document={document}/>
+                    document && <ChatGPTIEAnalyzerView document={document}/>
                 }
             </Card>
 

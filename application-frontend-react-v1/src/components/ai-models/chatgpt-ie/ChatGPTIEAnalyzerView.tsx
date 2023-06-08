@@ -1,9 +1,8 @@
 import GraphContainer from "../../graph/GraphContainer";
 import Document from "../../../models/Document";
 import ChatGPTIEAnalyzerAPI from "../../../api/ChatGPTIEAnalyzerAPI.tsx";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import TextSelector from "../../text-selector/TextSelector";
-import AtlopAnalyzerApi from "../../../api/AtlopAnalyzerApi";
 import './ans.css'
 
 interface AnalyzerViewProps {
@@ -15,7 +14,7 @@ export default function ChatGPTIEAnalyzerView({document}: AnalyzerViewProps) {
 
     const analyzeSelectedTextHandler = (text: string) => {
         const fetchData = async () => {
-            const result = await ChatGPTIEAnalyzerAPI.analyzeText(document.text)
+            const result = await ChatGPTIEAnalyzerAPI.analyzeText(text)
             setAnalyzedDoc(result)
         }
 

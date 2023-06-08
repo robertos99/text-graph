@@ -9,15 +9,16 @@ interface GraphContainerProps {
 
 function mapDomainNodesToVisNodes(nodes: Node[]): VisNode[] {
     return nodes.map(n => {
-        return {id: Number(n.id), label: n.name}})
+        return {id: Number(n.id), label: n.label}})
 }
 function mapDomainEdgesToVisEdges(edges: Edge[]): VisEdge[] {
     return edges.map((e, i) => {
-        return {id: i, from: Number(e.head), to: Number(e.tail), label: e.relationship}
+        return {id: i, from: Number(e.head), to: Number(e.tail), label: e.label}
     })
 }
 
 export default function GraphContainer({edges, nodes}: GraphContainerProps) {
+    console.log({edges, nodes})
 
     const visNodes = new DataSet<Node>(mapDomainNodesToVisNodes(nodes));
 

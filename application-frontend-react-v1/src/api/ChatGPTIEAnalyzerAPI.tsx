@@ -1,5 +1,5 @@
 export default class ChatGPTIEAnalyzerAPI {
-    static async analyzeText(textData: string): Promise<any> {
+    static async analyzeText(textData: string): Promise<Graph> {
         const data: TextData = {text: textData}
         try {
           const response = await fetch('http://localhost:5000/aimodel/chatgpt-ie/analyze', {

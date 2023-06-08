@@ -1,0 +1,4 @@
+extract the relationships out of this document.
+respon with a json, where the nodes are the entitys and the edges the relationships between the entitys. make sure to do coreference resolution. the goal is to display the json in a graph later on. make sure each entity gets a unique id and a label containing the name of the entity. the edges should then reference the correpsoing ids. the edges should have a head entity and a tail entity and their relationship between each other as a label.
+
+the document:

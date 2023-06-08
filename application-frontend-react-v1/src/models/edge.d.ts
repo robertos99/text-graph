@@ -1,5 +1,5 @@
 interface Edge {
     head: string,
-    relationship: string,
+    label: string,
     tail: string
 }
